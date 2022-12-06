@@ -1,0 +1,52 @@
+{
+  "britishLibraryDemoApp": {
+    "name": {
+      "home": {
+        "title": "Names",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Name erstellen",
+        "createOrEditLabel": "Name erstellen oder bearbeiten",
+        "notFound": "Keine Names gefunden"
+      },
+      "created": "Name erstellt mit ID {{ param }}",
+      "updated": "Name aktualisiert mit ID {{ param }}",
+      "deleted": "Name gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Name {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Name"
+      },
+      "id": "ID",
+      "name": "Name",
+      "datesAssociatedWithName": "Dates Associated With Name",
+      "typeOfName": "Type Of Name",
+      "role": "Role",
+      "otherNames": "Other Names",
+      "blRecordId": "Bl Record Id",
+      "typeOfResource": "Type Of Resource",
+      "contentType": "Content Type",
+      "materialType": "Material Type",
+      "bnbNumber": "Bnb Number",
+      "archivalResourceKey": "Archival Resource Key",
+      "isbn": "Isbn",
+      "title": "Title",
+      "variantTitles": "Variant Titles",
+      "seriesTitle": "Series Title",
+      "numberWithinSeries": "Number Within Series",
+      "countryOfPublication": "Country Of Publication",
+      "placeOfPublication": "Place Of Publication",
+      "publisher": "Publisher",
+      "dateOfPublication": "Date Of Publication",
+      "edition": "Edition",
+      "physicalDescription": "Physical Description",
+      "deweyClassification": "Dewey Classification",
+      "blShelfmark": "Bl Shelfmark",
+      "topics": "Topics",
+      "genre": "Genre",
+      "languages": "Languages",
+      "notes": "Notes",
+      "provenance": "Provenance"
+    }
+  }
+}

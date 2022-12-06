@@ -1,0 +1,144 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="record">
+      <h2 data-cy="recordDetailsHeading"><span jhiTranslate="britishLibraryDemoApp.record.detail.title">Record</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ record.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.blRecordId">Bl Record Id</span></dt>
+        <dd>
+          <span>{{ record.blRecordId }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.typeOfResource">Type Of Resource</span></dt>
+        <dd>
+          <span>{{ record.typeOfResource }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.contentType">Content Type</span></dt>
+        <dd>
+          <span>{{ record.contentType }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.materialType">Material Type</span></dt>
+        <dd>
+          <span>{{ record.materialType }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.bnbNumber">Bnb Number</span></dt>
+        <dd>
+          <span>{{ record.bnbNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.archivalResourceKey">Archival Resource Key</span></dt>
+        <dd>
+          <span>{{ record.archivalResourceKey }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.isbn">Isbn</span></dt>
+        <dd>
+          <span>{{ record.isbn }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.name">Name</span></dt>
+        <dd>
+          <span>{{ record.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.datesAssociatedWithName">Dates Associated With Name</span></dt>
+        <dd>
+          <span>{{ record.datesAssociatedWithName }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.typeOfName">Type Of Name</span></dt>
+        <dd>
+          <span>{{ record.typeOfName }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.role">Role</span></dt>
+        <dd>
+          <span>{{ record.role }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.allNames">All Names</span></dt>
+        <dd>
+          <span>{{ record.allNames }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.title">Title</span></dt>
+        <dd>
+          <span>{{ record.title }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.variantTitles">Variant Titles</span></dt>
+        <dd>
+          <span>{{ record.variantTitles }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.seriesTitle">Series Title</span></dt>
+        <dd>
+          <span>{{ record.seriesTitle }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.numberWithinSeries">Number Within Series</span></dt>
+        <dd>
+          <span>{{ record.numberWithinSeries }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.countryOfPublication">Country Of Publication</span></dt>
+        <dd>
+          <span>{{ record.countryOfPublication }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.placeOfPublication">Place Of Publication</span></dt>
+        <dd>
+          <span>{{ record.placeOfPublication }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.publisher">Publisher</span></dt>
+        <dd>
+          <span>{{ record.publisher }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.dateOfPublication">Date Of Publication</span></dt>
+        <dd>
+          <span>{{ record.dateOfPublication }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.edition">Edition</span></dt>
+        <dd>
+          <span>{{ record.edition }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.physicalDescription">Physical Description</span></dt>
+        <dd>
+          <span>{{ record.physicalDescription }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.deweyClassification">Dewey Classification</span></dt>
+        <dd>
+          <span>{{ record.deweyClassification }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.blShelfmark">Bl Shelfmark</span></dt>
+        <dd>
+          <span>{{ record.blShelfmark }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.topics">Topics</span></dt>
+        <dd>
+          <span>{{ record.topics }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.genre">Genre</span></dt>
+        <dd>
+          <span>{{ record.genre }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.languages">Languages</span></dt>
+        <dd>
+          <span>{{ record.languages }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.notes">Notes</span></dt>
+        <dd>
+          <span>{{ record.notes }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.record.provenance">Provenance</span></dt>
+        <dd>
+          <span>{{ record.provenance }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/record-bl-comp', record.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

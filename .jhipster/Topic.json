@@ -1,0 +1,137 @@
+{
+  "angularJSSuffix": "blComp",
+  "applications": "*",
+  "changelogDate": "20221206171258",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "topic",
+  "fields": [
+    {
+      "fieldName": "topic",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "typeOfTopic",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "blRecordId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "typeOfResource",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contentType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "materialType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bnbNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "archivalResourceKey",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isbn",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "datesAssociatedWithName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "typeOfName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "role",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "allNames",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "variantTitles",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "seriesTitle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numberWithinSeries",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "countryOfPublication",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "placeOfPublication",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "publisher",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateOfPublication",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "edition",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "physicalDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deweyClassification",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "blShelfmark",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "genre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "languages",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "notes",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "provenance",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Topic",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

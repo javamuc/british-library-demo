@@ -1,0 +1,302 @@
+<div>
+  <h2 id="page-heading" data-cy="NameHeading">
+    <span jhiTranslate="britishLibraryDemoApp.name.home.title">Names</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="britishLibraryDemoApp.name.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-name-bl-comp"
+        [routerLink]="['/name-bl-comp/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="britishLibraryDemoApp.name.home.createLabel"> Create a new Name </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="names?.length === 0">
+    <span jhiTranslate="britishLibraryDemoApp.name.home.notFound">No Names found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="names && names.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="name">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.name">Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="datesAssociatedWithName">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.datesAssociatedWithName">Dates Associated With Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="typeOfName">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.typeOfName">Type Of Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="role">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.role">Role</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="otherNames">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.otherNames">Other Names</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="blRecordId">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.blRecordId">Bl Record Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="typeOfResource">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.typeOfResource">Type Of Resource</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="contentType">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.contentType">Content Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="materialType">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.materialType">Material Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="bnbNumber">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.bnbNumber">Bnb Number</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="archivalResourceKey">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.archivalResourceKey">Archival Resource Key</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="isbn">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.isbn">Isbn</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="title">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.title">Title</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="variantTitles">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.variantTitles">Variant Titles</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="seriesTitle">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.seriesTitle">Series Title</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="numberWithinSeries">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.numberWithinSeries">Number Within Series</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="countryOfPublication">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.countryOfPublication">Country Of Publication</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="placeOfPublication">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.placeOfPublication">Place Of Publication</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="publisher">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.publisher">Publisher</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="dateOfPublication">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.dateOfPublication">Date Of Publication</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="edition">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.edition">Edition</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="physicalDescription">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.physicalDescription">Physical Description</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="deweyClassification">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.deweyClassification">Dewey Classification</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="blShelfmark">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.blShelfmark">Bl Shelfmark</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="topics">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.topics">Topics</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="genre">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.genre">Genre</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="languages">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.languages">Languages</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="notes">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.notes">Notes</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="provenance">
+            <div class="d-flex">
+              <span jhiTranslate="britishLibraryDemoApp.name.provenance">Provenance</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let name of names; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/name-bl-comp', name.id, 'view']">{{ name.id }}</a>
+          </td>
+          <td>{{ name.name }}</td>
+          <td>{{ name.datesAssociatedWithName }}</td>
+          <td>{{ name.typeOfName }}</td>
+          <td>{{ name.role }}</td>
+          <td>{{ name.otherNames }}</td>
+          <td>{{ name.blRecordId }}</td>
+          <td>{{ name.typeOfResource }}</td>
+          <td>{{ name.contentType }}</td>
+          <td>{{ name.materialType }}</td>
+          <td>{{ name.bnbNumber }}</td>
+          <td>{{ name.archivalResourceKey }}</td>
+          <td>{{ name.isbn }}</td>
+          <td>{{ name.title }}</td>
+          <td>{{ name.variantTitles }}</td>
+          <td>{{ name.seriesTitle }}</td>
+          <td>{{ name.numberWithinSeries }}</td>
+          <td>{{ name.countryOfPublication }}</td>
+          <td>{{ name.placeOfPublication }}</td>
+          <td>{{ name.publisher }}</td>
+          <td>{{ name.dateOfPublication }}</td>
+          <td>{{ name.edition }}</td>
+          <td>{{ name.physicalDescription }}</td>
+          <td>{{ name.deweyClassification }}</td>
+          <td>{{ name.blShelfmark }}</td>
+          <td>{{ name.topics }}</td>
+          <td>{{ name.genre }}</td>
+          <td>{{ name.languages }}</td>
+          <td>{{ name.notes }}</td>
+          <td>{{ name.provenance }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/name-bl-comp', name.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/name-bl-comp', name.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(name)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="names && names.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,146 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="classification">
+      <h2 data-cy="classificationDetailsHeading">
+        <span jhiTranslate="britishLibraryDemoApp.classification.detail.title">Classification</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ classification.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.deweyClassification">Dewey Classification</span></dt>
+        <dd>
+          <span>{{ classification.deweyClassification }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.blRecordId">Bl Record Id</span></dt>
+        <dd>
+          <span>{{ classification.blRecordId }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.typeOfResource">Type Of Resource</span></dt>
+        <dd>
+          <span>{{ classification.typeOfResource }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.contentType">Content Type</span></dt>
+        <dd>
+          <span>{{ classification.contentType }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.materialType">Material Type</span></dt>
+        <dd>
+          <span>{{ classification.materialType }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.bnbNumber">Bnb Number</span></dt>
+        <dd>
+          <span>{{ classification.bnbNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.archivalResourceKey">Archival Resource Key</span></dt>
+        <dd>
+          <span>{{ classification.archivalResourceKey }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.isbn">Isbn</span></dt>
+        <dd>
+          <span>{{ classification.isbn }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.name">Name</span></dt>
+        <dd>
+          <span>{{ classification.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.datesAssociatedWithName">Dates Associated With Name</span></dt>
+        <dd>
+          <span>{{ classification.datesAssociatedWithName }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.typeOfName">Type Of Name</span></dt>
+        <dd>
+          <span>{{ classification.typeOfName }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.role">Role</span></dt>
+        <dd>
+          <span>{{ classification.role }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.allNames">All Names</span></dt>
+        <dd>
+          <span>{{ classification.allNames }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.title">Title</span></dt>
+        <dd>
+          <span>{{ classification.title }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.variantTitles">Variant Titles</span></dt>
+        <dd>
+          <span>{{ classification.variantTitles }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.seriesTitle">Series Title</span></dt>
+        <dd>
+          <span>{{ classification.seriesTitle }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.numberWithinSeries">Number Within Series</span></dt>
+        <dd>
+          <span>{{ classification.numberWithinSeries }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.countryOfPublication">Country Of Publication</span></dt>
+        <dd>
+          <span>{{ classification.countryOfPublication }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.placeOfPublication">Place Of Publication</span></dt>
+        <dd>
+          <span>{{ classification.placeOfPublication }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.publisher">Publisher</span></dt>
+        <dd>
+          <span>{{ classification.publisher }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.dateOfPublication">Date Of Publication</span></dt>
+        <dd>
+          <span>{{ classification.dateOfPublication }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.edition">Edition</span></dt>
+        <dd>
+          <span>{{ classification.edition }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.physicalDescription">Physical Description</span></dt>
+        <dd>
+          <span>{{ classification.physicalDescription }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.blShelfmark">Bl Shelfmark</span></dt>
+        <dd>
+          <span>{{ classification.blShelfmark }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.topics">Topics</span></dt>
+        <dd>
+          <span>{{ classification.topics }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.genre">Genre</span></dt>
+        <dd>
+          <span>{{ classification.genre }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.languages">Languages</span></dt>
+        <dd>
+          <span>{{ classification.languages }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.notes">Notes</span></dt>
+        <dd>
+          <span>{{ classification.notes }}</span>
+        </dd>
+        <dt><span jhiTranslate="britishLibraryDemoApp.classification.provenance">Provenance</span></dt>
+        <dd>
+          <span>{{ classification.provenance }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/classification-bl-comp', classification.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
