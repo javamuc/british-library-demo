@@ -1,0 +1,322 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-record-bl-comp-heading"
+        data-cy="RecordCreateUpdateHeading"
+        jhiTranslate="britishLibraryDemoApp.record.home.createOrEditLabel"
+      >
+        Create or edit a Record
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.blRecordId" for="field_blRecordId">Bl Record Id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="blRecordId"
+            id="field_blRecordId"
+            data-cy="blRecordId"
+            formControlName="blRecordId"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.typeOfResource" for="field_typeOfResource"
+            >Type Of Resource</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="typeOfResource"
+            id="field_typeOfResource"
+            data-cy="typeOfResource"
+            formControlName="typeOfResource"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.contentType" for="field_contentType">Content Type</label>
+          <input
+            type="text"
+            class="form-control"
+            name="contentType"
+            id="field_contentType"
+            data-cy="contentType"
+            formControlName="contentType"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.materialType" for="field_materialType">Material Type</label>
+          <input
+            type="text"
+            class="form-control"
+            name="materialType"
+            id="field_materialType"
+            data-cy="materialType"
+            formControlName="materialType"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.bnbNumber" for="field_bnbNumber">Bnb Number</label>
+          <input type="text" class="form-control" name="bnbNumber" id="field_bnbNumber" data-cy="bnbNumber" formControlName="bnbNumber" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.archivalResourceKey" for="field_archivalResourceKey"
+            >Archival Resource Key</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="archivalResourceKey"
+            id="field_archivalResourceKey"
+            data-cy="archivalResourceKey"
+            formControlName="archivalResourceKey"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.isbn" for="field_isbn">Isbn</label>
+          <input type="text" class="form-control" name="isbn" id="field_isbn" data-cy="isbn" formControlName="isbn" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.datesAssociatedWithName" for="field_datesAssociatedWithName"
+            >Dates Associated With Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="datesAssociatedWithName"
+            id="field_datesAssociatedWithName"
+            data-cy="datesAssociatedWithName"
+            formControlName="datesAssociatedWithName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.typeOfName" for="field_typeOfName">Type Of Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="typeOfName"
+            id="field_typeOfName"
+            data-cy="typeOfName"
+            formControlName="typeOfName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.role" for="field_role">Role</label>
+          <input type="text" class="form-control" name="role" id="field_role" data-cy="role" formControlName="role" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.allNames" for="field_allNames">All Names</label>
+          <input type="text" class="form-control" name="allNames" id="field_allNames" data-cy="allNames" formControlName="allNames" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.title" for="field_title">Title</label>
+          <input type="text" class="form-control" name="title" id="field_title" data-cy="title" formControlName="title" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.variantTitles" for="field_variantTitles"
+            >Variant Titles</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="variantTitles"
+            id="field_variantTitles"
+            data-cy="variantTitles"
+            formControlName="variantTitles"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.seriesTitle" for="field_seriesTitle">Series Title</label>
+          <input
+            type="text"
+            class="form-control"
+            name="seriesTitle"
+            id="field_seriesTitle"
+            data-cy="seriesTitle"
+            formControlName="seriesTitle"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.numberWithinSeries" for="field_numberWithinSeries"
+            >Number Within Series</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="numberWithinSeries"
+            id="field_numberWithinSeries"
+            data-cy="numberWithinSeries"
+            formControlName="numberWithinSeries"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.countryOfPublication" for="field_countryOfPublication"
+            >Country Of Publication</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="countryOfPublication"
+            id="field_countryOfPublication"
+            data-cy="countryOfPublication"
+            formControlName="countryOfPublication"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.placeOfPublication" for="field_placeOfPublication"
+            >Place Of Publication</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="placeOfPublication"
+            id="field_placeOfPublication"
+            data-cy="placeOfPublication"
+            formControlName="placeOfPublication"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.publisher" for="field_publisher">Publisher</label>
+          <input type="text" class="form-control" name="publisher" id="field_publisher" data-cy="publisher" formControlName="publisher" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.dateOfPublication" for="field_dateOfPublication"
+            >Date Of Publication</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="dateOfPublication"
+            id="field_dateOfPublication"
+            data-cy="dateOfPublication"
+            formControlName="dateOfPublication"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.edition" for="field_edition">Edition</label>
+          <input type="text" class="form-control" name="edition" id="field_edition" data-cy="edition" formControlName="edition" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.physicalDescription" for="field_physicalDescription"
+            >Physical Description</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="physicalDescription"
+            id="field_physicalDescription"
+            data-cy="physicalDescription"
+            formControlName="physicalDescription"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.deweyClassification" for="field_deweyClassification"
+            >Dewey Classification</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="deweyClassification"
+            id="field_deweyClassification"
+            data-cy="deweyClassification"
+            formControlName="deweyClassification"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.blShelfmark" for="field_blShelfmark">Bl Shelfmark</label>
+          <input
+            type="text"
+            class="form-control"
+            name="blShelfmark"
+            id="field_blShelfmark"
+            data-cy="blShelfmark"
+            formControlName="blShelfmark"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.topics" for="field_topics">Topics</label>
+          <input type="text" class="form-control" name="topics" id="field_topics" data-cy="topics" formControlName="topics" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.genre" for="field_genre">Genre</label>
+          <input type="text" class="form-control" name="genre" id="field_genre" data-cy="genre" formControlName="genre" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.languages" for="field_languages">Languages</label>
+          <input type="text" class="form-control" name="languages" id="field_languages" data-cy="languages" formControlName="languages" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.notes" for="field_notes">Notes</label>
+          <input type="text" class="form-control" name="notes" id="field_notes" data-cy="notes" formControlName="notes" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="britishLibraryDemoApp.record.provenance" for="field_provenance">Provenance</label>
+          <input
+            type="text"
+            class="form-control"
+            name="provenance"
+            id="field_provenance"
+            data-cy="provenance"
+            formControlName="provenance"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

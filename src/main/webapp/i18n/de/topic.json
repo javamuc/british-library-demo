@@ -1,0 +1,53 @@
+{
+  "britishLibraryDemoApp": {
+    "topic": {
+      "home": {
+        "title": "Topics",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Topic erstellen",
+        "createOrEditLabel": "Topic erstellen oder bearbeiten",
+        "notFound": "Keine Topics gefunden"
+      },
+      "created": "Topic erstellt mit ID {{ param }}",
+      "updated": "Topic aktualisiert mit ID {{ param }}",
+      "deleted": "Topic gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Topic {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Topic"
+      },
+      "id": "ID",
+      "topic": "Topic",
+      "typeOfTopic": "Type Of Topic",
+      "blRecordId": "Bl Record Id",
+      "typeOfResource": "Type Of Resource",
+      "contentType": "Content Type",
+      "materialType": "Material Type",
+      "bnbNumber": "Bnb Number",
+      "archivalResourceKey": "Archival Resource Key",
+      "isbn": "Isbn",
+      "name": "Name",
+      "datesAssociatedWithName": "Dates Associated With Name",
+      "typeOfName": "Type Of Name",
+      "role": "Role",
+      "allNames": "All Names",
+      "title": "Title",
+      "variantTitles": "Variant Titles",
+      "seriesTitle": "Series Title",
+      "numberWithinSeries": "Number Within Series",
+      "countryOfPublication": "Country Of Publication",
+      "placeOfPublication": "Place Of Publication",
+      "publisher": "Publisher",
+      "dateOfPublication": "Date Of Publication",
+      "edition": "Edition",
+      "physicalDescription": "Physical Description",
+      "deweyClassification": "Dewey Classification",
+      "blShelfmark": "Bl Shelfmark",
+      "genre": "Genre",
+      "languages": "Languages",
+      "notes": "Notes",
+      "provenance": "Provenance"
+    }
+  }
+}
